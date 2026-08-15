@@ -498,6 +498,36 @@ const LOCATIONS = [
     description: 'Earthquake engineering research building / shake table lab.',
     isActive: true,
   },
+  {
+    slug: 'mechanical-workshop',
+    name: 'Mechanical Workshop',
+    category: 'Academic Department',
+    latitude: 24.758214,
+    longitude: 92.7911114,
+    mapsUrl: 'https://maps.google.com/?q=24.758214,92.7911114',
+    description: 'Mechanical Engineering workshop with manufacturing and fabrication labs.',
+    isActive: true,
+  },
+  {
+    slug: 'ece-cse-cc-building',
+    name: 'ECE Dept, CSE Dept and CC Building',
+    category: 'Academic Department',
+    latitude: null,
+    longitude: null,
+    mapsUrl: 'https://maps.app.goo.gl/5hcBc5gstYdDBeEB9',
+    description: 'Building housing Electronics & Communication Engineering, Computer Science Engineering departments and the Computer Centre.',
+    isActive: true,
+  },
+  {
+    slug: 'old-gallery',
+    name: 'Old Gallery',
+    category: 'Academic / Facility',
+    latitude: null,
+    longitude: null,
+    mapsUrl: 'https://maps.app.goo.gl/P2F32WjjAx9uDRi98',
+    description: 'Old Gallery – a gathering and exhibition space on campus.',
+    isActive: true,
+  },
 ]
 
 async function main() {
