@@ -14,7 +14,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
   if (!location) return NextResponse.json({ error: 'Not found' }, { status: 404 })
 
   const baseUrl = resolveBaseUrl(req)
-  const url = `${baseUrl}/location/${location.slug}`
+  const url = `${baseUrl}/api/go/${location.slug}`
 
   const qrBuffer = await QRCode.toBuffer(url, {
     errorCorrectionLevel: 'H',

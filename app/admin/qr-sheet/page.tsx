@@ -153,7 +153,7 @@ export default function QRSheetPage() {
 
             <div className="qr-sheet-grid">
               {displayed.map(loc => {
-                const permanentUrl = `${baseUrl.replace(/\/$/, '')}/location/${loc.slug}`
+                const permanentUrl = `${baseUrl.replace(/\/$/, '')}/api/go/${loc.slug}`
                 const qrImgSrc = `/api/locations/${loc.id}/qr?baseUrl=${encodeURIComponent(baseUrl)}`
                 return (
                   <div key={loc.id} className="qr-sheet-card">
