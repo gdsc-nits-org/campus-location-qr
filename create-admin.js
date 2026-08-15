@@ -4,22 +4,24 @@ const bcrypt = require("bcryptjs");
 const prisma = new PrismaClient();
 
 async function main() {
-  const email = "84agarwalharshit@gmai.com";
+  const email = "84agarwalharshit@gmail.com";
   const password = "gdgcweb";
-
-  const existing = await prisma.adminUser.findUnique({
-    where: { email: email.toLowerCase() },
-  });
-
-  if (existing) {
-    console.log("Admin already exists:", existing.email);
-    return;
-  }
 
   const passwordHash = await bcrypt.hash(password, 12);
 
-  const admin = await prisma.adminUser.create({
-    data: {
+  // Clean up any typo record if exists
+  await prisma.adminUser.deleteMany({
+    where: { email: "84agarwalharshit@gmai.com" }
+  });
+
+  const admin = await prisma.adminUser.upsert({
+    where: { email: email.toLowerCase() },
+    update: {
+      passwordHash,
+      role: "SUPER_ADMIN",
+      name: "Harshit Agarwal",
+    },
+    create: {
       email: email.toLowerCase(),
       name: "Harshit Agarwal",
       passwordHash,
@@ -27,7 +29,7 @@ async function main() {
     },
   });
 
-  console.log("SUPER_ADMIN created:", admin.email);
+  console.log("SUPER_ADMIN ready:", admin.email, "role:", admin.role);
 }
 
 main()
