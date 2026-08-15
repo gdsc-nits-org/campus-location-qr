@@ -158,9 +158,8 @@ export default function QRSheetPage() {
                 return (
                   <div key={loc.id} className="qr-sheet-card">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={qrImgSrc} alt={`QR for ${loc.name}`} width={140} height={140} />
+                    <img src={qrImgSrc} alt={`QR for ${loc.name}`} width={200} height={200} />
                     <div className="qr-loc-name">{loc.name}</div>
-                    <div className="qr-loc-url">{permanentUrl}</div>
                   </div>
                 )
               })}

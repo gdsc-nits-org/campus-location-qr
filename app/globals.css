@@ -997,9 +997,8 @@ td { padding: 12px 14px; font-size: var(--text-sm); color: var(--text-2); vertic
   align-items: center;
   gap: 8px;
 }
-.qr-sheet-card img { width: 140px; height: 140px; }
-.qr-sheet-card .qr-loc-name { font-size: 0.8rem; font-weight: 700; color: #1e293b; }
-.qr-sheet-card .qr-loc-url { font-size: 0.65rem; color: #64748b; font-family: monospace; word-break: break-all; }
+.qr-sheet-card img { width: 200px; height: 200px; }
+.qr-sheet-card .qr-loc-name { font-size: 0.85rem; font-weight: 700; color: #1e293b; }
 
 @media print {
   .qr-sheet-grid {
@@ -1010,5 +1009,5 @@ td { padding: 12px 14px; font-size: var(--text-sm); color: var(--text-2); vertic
     border: 1px solid #ccc;
     break-inside: avoid;
   }
-  .qr-sheet-card img { width: 120px; height: 120px; }
+  .qr-sheet-card img { width: 180px; height: 180px; }
 }
