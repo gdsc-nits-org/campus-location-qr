@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -27,7 +27,7 @@ model AdminUser {
   email        String   @unique
   name         String?
   passwordHash String
-  role         String   @default("ADMIN") // SUPER_ADMIN or ADMIN
+  role         String   @default("ADMIN")
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
@@ -38,8 +38,8 @@ model AccessRequest {
   email      String
   department String?
   reason     String?
-  status     String   @default("PENDING") // PENDING, APPROVED, REJECTED
-  grantedBy  String?  // admin email who approved
+  status     String   @default("PENDING")
+  grantedBy  String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
