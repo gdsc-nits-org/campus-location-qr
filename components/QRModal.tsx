@@ -81,7 +81,6 @@ export default function QRModal({ location, onClose }: Props) {
             ) : (
               <div style={{ color: '#888', padding: 20, fontSize: 'var(--text-sm)' }}>Failed to generate QR</div>
             )}
-            <div className="qr-url-text">{permanentUrl}</div>
           </div>
 
           <div style={{
@@ -91,9 +90,10 @@ export default function QRModal({ location, onClose }: Props) {
             borderRadius: 'var(--r-sm)',
             fontSize: 'var(--text-xs)',
             color: 'var(--text-2)',
+            textAlign: 'center',
             lineHeight: 1.6
           }}>
-            📱 Encodes <strong>{permanentUrl}</strong> — When scanned from a phone on the same Wi-Fi, it opens directly!
+            📱 Scan with your phone to get directions
           </div>
         </div>
 
